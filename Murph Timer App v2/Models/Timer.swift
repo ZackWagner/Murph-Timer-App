@@ -54,43 +54,87 @@ class ManagerClass: ObservableObject {
         let minutes = (intMil % 3600) / 60
         let seconds = (intMil % 3600) % 60
         
-        if seconds < 10 {
-            if hours != 0{
-                if milisec < 10 {
-                    return String(hours) + ":0" + String(minutes) + ":" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+        if minutes != 0 {
+            if seconds < 10 {
+                if hours != 0{
+                    if milisec < 10 {
+                        return String(hours) + ":0" + String(minutes) + ":" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(hours) + ":0" + String(minutes) + ":" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
-                
-                else{
-                    return String(hours) + ":0" + String(minutes) + ":" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                else {
+                    if milisec < 10 {
+                        return String(minutes) + ":0" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(minutes) + ":0" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
             }
-            else {
-                if milisec < 10 {
-                    return String(minutes) + ":0" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+            else{
+                if hours != 0{
+                    if milisec < 10 {
+                        return String(hours) + ":" + String(minutes) + ":" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(hours) + ":" + String(minutes) + ":" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
-                
-                else{
-                    return String(minutes) + ":0" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                else {
+                    if milisec < 10 {
+                        return String(minutes) + ":" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(minutes) + ":" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
             }
         }
         else{
-            if hours != 0{
-                if milisec < 10 {
-                    return String(hours) + ":" + String(minutes) + ":" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+            if seconds < 10 {
+                if hours != 0{
+                    if milisec < 10 {
+                        return String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
-                
-                else{
-                    return String(hours) + ":" + String(minutes) + ":" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                else {
+                    if milisec < 10 {
+                        return String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
             }
-            else {
-                if milisec < 10 {
-                    return String(minutes) + ":" + String(seconds) +   ".0" + String(format: "%.0f", milisec)
+            else{
+                if hours != 0{
+                    if milisec < 10 {
+                        return String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
-                
-                else{
-                    return String(minutes) + ":" + String(seconds) +   "." + String(format: "%.0f", milisec)
+                else {
+                    if milisec < 10 {
+                        return String(seconds) +   ".0" + String(format: "%.0f", milisec)
+                    }
+                    
+                    else{
+                        return String(seconds) +   "." + String(format: "%.0f", milisec)
+                    }
                 }
             }
         }

@@ -51,7 +51,7 @@ struct ContentView: View {
                             managerClass.start()
                             phase = phase + 1
                         } label: {
-                            Image("BEGIN").resizable().frame(width: 100.0, height: 100.0).scaledToFill().cornerRadius(100)
+                            Image("BEGIN").resizable().frame(width: 150.0, height: 150.0).scaledToFill().cornerRadius(100)
                         }
                     }
                 case .running:
@@ -75,10 +75,10 @@ struct ContentView: View {
                                     ManagerClass.timeToString(mil: managerClass.secondElapsed)
                                 }
                                 else if phase == 2{
-                                    calisthenicsString = "Calisthenics Split: " + String(format: "%.2f", times[phase] - times[0])
+                                    calisthenicsString = "Calisthenics Split: " + ManagerClass.timeToString(mil: times[phase] - times[0])
                                 }
                                 else if phase == 3{
-                                    mile2String = "Mile 2 Split: " + String(format: "%.2f", (times[phase] - times[1]))
+                                    mile2String = "Mile 2 Split: " + ManagerClass.timeToString(mil: times[phase] - times[1])
                                     managerClass.finish()
                                     finalString = "Total Time: " + ManagerClass.timeToString(mil: managerClass.secondElapsed)
                                 }
