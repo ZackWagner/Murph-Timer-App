@@ -12,7 +12,6 @@
 		BA509E8C29688A4A00D9100A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA509E8B29688A4A00D9100A /* Assets.xcassets */; };
 		BA509E8F29688A4A00D9100A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA509E8E29688A4A00D9100A /* Preview Assets.xcassets */; };
 		BA509E9929689F0500D9100A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509E9829689F0500D9100A /* Timer.swift */; };
-		BA509E9B2968A04100D9100A /* Calisthenics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509E9A2968A04100D9100A /* Calisthenics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +21,6 @@
 		BA509E8B29688A4A00D9100A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA509E8E29688A4A00D9100A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA509E9829689F0500D9100A /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		BA509E9A2968A04100D9100A /* Calisthenics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calisthenics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				BA509E8929688A4900D9100A /* ContentView.swift */,
-				BA509E9A2968A04100D9100A /* Calisthenics.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,7 +167,6 @@
 				BA509E9929689F0500D9100A /* Timer.swift in Sources */,
 				BA509E8A29688A4900D9100A /* ContentView.swift in Sources */,
 				BA509E8829688A4900D9100A /* Murph_Timer_App_v2App.swift in Sources */,
-				BA509E9B2968A04100D9100A /* Calisthenics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
