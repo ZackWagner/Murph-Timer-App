@@ -20,8 +20,11 @@ struct ContentView: View {
     @State var backgrounds = ["plain", "running", "cal", "running", "plain"]
     
     var body: some View {
-
-            
+        
+        
+        ZStack{
+            Image("plain").resizable().ignoresSafeArea()
+            Image(backgrounds[phase]).resizable()
             
             VStack{
                 
@@ -29,16 +32,16 @@ struct ContentView: View {
                 
                 Text(titles[phase]).font(.largeTitle).fontWeight(.bold).multilineTextAlignment(.center).padding()
                 
-                    
+                
                 Text(ManagerClass.timeToString(mil: managerClass.secondElapsed))
                     .font(.largeTitle)
                     .multilineTextAlignment(.leading)
                     .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    
-                    
-                    
-                    
-                   
+                
+                
+                
+                
+                
                 
                 
                 switch managerClass.mode {
@@ -46,32 +49,35 @@ struct ContentView: View {
                     withAnimation{
                         Button {
                             managerClass.start()
+                            phase = phase + 1
                         } label: {
-                            Image("BEGIN").resizable().frame(width: 100.0, height: 100.0).scaledToFill()
+                            Image("BEGIN").resizable().frame(width: 100.0, height: 100.0).scaledToFill().cornerRadius(100)
                         }
                     }
                 case .running:
                     withAnimation{
                         HStack{
+                            Spacer()
                             //pause button
                             Button {
                                 managerClass.pause()
                             } label: {
-                                Image("PAUSE").resizable().frame(width: 100.0, height: 100.0).scaledToFill()
+                                Image("PAUSE").resizable().frame(width: 100.0, height: 100.0).scaledToFill().cornerRadius(100)
                                 
                             }
+                            Spacer()
                             //continue button
                             Button {
                                 times[phase] = managerClass.secondElapsed
                                 
-                                if phase == 0{
+                                if phase == 1{
                                     mile1String = "Mile 1 Split: " +
                                     ManagerClass.timeToString(mil: managerClass.secondElapsed)
                                 }
-                                else if phase == 1{
+                                else if phase == 2{
                                     calisthenicsString = "Calisthenics Split: " + String(format: "%.2f", times[phase] - times[0])
                                 }
-                                else if phase == 2{
+                                else if phase == 3{
                                     mile2String = "Mile 2 Split: " + String(format: "%.2f", (times[phase] - times[1]))
                                     managerClass.finish()
                                     finalString = "Total Time: " + ManagerClass.timeToString(mil: managerClass.secondElapsed)
@@ -85,9 +91,10 @@ struct ContentView: View {
                                 
                                 
                             } label: {
-                                Image("DONE").resizable().frame(width: 100.0, height: 100.0).scaledToFill()
+                                Image("DONE").resizable().frame(width: 100.0, height: 100.0).scaledToFill().cornerRadius(100)
                                 
                             }
+                            Spacer()
                         }
                     }
                     
@@ -102,7 +109,7 @@ struct ContentView: View {
                             Button {
                                 managerClass.start()
                             } label: {
-                                Image("RESUME").resizable().frame(width: 100.0, height: 100.0).scaledToFill()
+                                Image("RESUME").resizable().frame(width: 100.0, height: 100.0).scaledToFill().cornerRadius(100)
                             }
                             Button {
                                 managerClass.reset()
@@ -112,7 +119,7 @@ struct ContentView: View {
                                 calisthenicsString = ""
                                 finalString = ""
                             } label: {
-                                Image("RESET").resizable().frame(width: 100.0, height: 100.0).scaledToFill()
+                                Image("RESET").resizable().frame(width: 100.0, height: 100.0).scaledToFill().cornerRadius(100)
                             }
                         }
                     }
@@ -128,8 +135,8 @@ struct ContentView: View {
                         } label: {
                             Image("START OVER")
                                 .cornerRadius(10)
-                                
-                                
+                            
+                            
                             
                         }
                         
@@ -143,16 +150,15 @@ struct ContentView: View {
                 Text(calisthenicsString).font(.title2).frame(height: 40.0)
                 Text(mile2String).font(.title2).frame(height: 40.0)
                 Text(finalString).font(.title).fontWeight(.bold).frame(height: 60.0)
-                    
+                
                 Spacer()
                 Spacer()
                 
                 
-            
             }
         }
     }
-    
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
