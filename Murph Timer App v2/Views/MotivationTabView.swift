@@ -11,7 +11,7 @@ import SwiftUI
 struct MotivationTabView: View {
     
     @ObservedObject var quoteModel = QuoteModel()
-    @State var num = 0
+    @State var num = Int.random(in: 0...100)
     
     var body: some View {
         ZStack{
