@@ -12,6 +12,14 @@
 		BA509E8C29688A4A00D9100A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA509E8B29688A4A00D9100A /* Assets.xcassets */; };
 		BA509E8F29688A4A00D9100A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA509E8E29688A4A00D9100A /* Preview Assets.xcassets */; };
 		BA509E9929689F0500D9100A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509E9829689F0500D9100A /* Timer.swift */; };
+		BA509EA1296CC93800D9100A /* enterpreneur-quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = BA509EA0296CC93800D9100A /* enterpreneur-quotes.json */; };
+		BA509EA3296CC94300D9100A /* DataHorse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509EA2296CC94300D9100A /* DataHorse.swift */; };
+		BA509EA5296CC94E00D9100A /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509EA4296CC94E00D9100A /* QuoteModel.swift */; };
+		BA509EA7296CC95400D9100A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509EA6296CC95400D9100A /* Quote.swift */; };
+		BA509EA9296CCC9000D9100A /* Main View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509EA8296CCC9000D9100A /* Main View.swift */; };
+		BA509EAB296DDD5D00D9100A /* RunFreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509EAA296DDD5D00D9100A /* RunFreeView.swift */; };
+		BA509EAD296DE17F00D9100A /* FullMurphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509EAC296DE17F00D9100A /* FullMurphView.swift */; };
+		BA509EAF296DE57D00D9100A /* MotivationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA509EAE296DE57D00D9100A /* MotivationTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +29,14 @@
 		BA509E8B29688A4A00D9100A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA509E8E29688A4A00D9100A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA509E9829689F0500D9100A /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		BA509EA0296CC93800D9100A /* enterpreneur-quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "enterpreneur-quotes.json"; sourceTree = "<group>"; };
+		BA509EA2296CC94300D9100A /* DataHorse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHorse.swift; sourceTree = "<group>"; };
+		BA509EA4296CC94E00D9100A /* QuoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		BA509EA6296CC95400D9100A /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		BA509EA8296CCC9000D9100A /* Main View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main View.swift"; sourceTree = "<group>"; };
+		BA509EAA296DDD5D00D9100A /* RunFreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunFreeView.swift; sourceTree = "<group>"; };
+		BA509EAC296DE17F00D9100A /* FullMurphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMurphView.swift; sourceTree = "<group>"; };
+		BA509EAE296DE57D00D9100A /* MotivationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +69,8 @@
 		BA509E8629688A4900D9100A /* Murph Timer App v2 */ = {
 			isa = PBXGroup;
 			children = (
+				BA509E9F296CC92400D9100A /* Structures */,
+				BA509E9E296CC91E00D9100A /* Data */,
 				BA509E9729689ECA00D9100A /* View Models */,
 				BA509E9629689EC500D9100A /* Models */,
 				BA509E9529689EB900D9100A /* Views */,
@@ -75,6 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				BA509E8929688A4900D9100A /* ContentView.swift */,
+				BA509EA8296CCC9000D9100A /* Main View.swift */,
+				BA509EAA296DDD5D00D9100A /* RunFreeView.swift */,
+				BA509EAC296DE17F00D9100A /* FullMurphView.swift */,
+				BA509EAE296DE57D00D9100A /* MotivationTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -83,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				BA509E9829689F0500D9100A /* Timer.swift */,
+				BA509EA6296CC95400D9100A /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,8 +113,25 @@
 		BA509E9729689ECA00D9100A /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA509EA4296CC94E00D9100A /* QuoteModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		BA509E9E296CC91E00D9100A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA509EA0296CC93800D9100A /* enterpreneur-quotes.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BA509E9F296CC92400D9100A /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				BA509EA2296CC94300D9100A /* DataHorse.swift */,
+			);
+			path = Structures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA509E8F29688A4A00D9100A /* Preview Assets.xcassets in Resources */,
+				BA509EA1296CC93800D9100A /* enterpreneur-quotes.json in Resources */,
 				BA509E8C29688A4A00D9100A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,8 +205,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA509EA5296CC94E00D9100A /* QuoteModel.swift in Sources */,
 				BA509E9929689F0500D9100A /* Timer.swift in Sources */,
+				BA509EAF296DE57D00D9100A /* MotivationTabView.swift in Sources */,
+				BA509EA9296CCC9000D9100A /* Main View.swift in Sources */,
+				BA509EA3296CC94300D9100A /* DataHorse.swift in Sources */,
 				BA509E8A29688A4900D9100A /* ContentView.swift in Sources */,
+				BA509EA7296CC95400D9100A /* Quote.swift in Sources */,
+				BA509EAB296DDD5D00D9100A /* RunFreeView.swift in Sources */,
+				BA509EAD296DE17F00D9100A /* FullMurphView.swift in Sources */,
 				BA509E8829688A4900D9100A /* Murph_Timer_App_v2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +351,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,6 +381,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

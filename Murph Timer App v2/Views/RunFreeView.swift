@@ -1,27 +1,25 @@
 //
-//  ContentView.swift
+//  RunFreeView.swift
 //  Murph Timer App v2
 //
-//  Created by Zack Wagner on 1/6/23.
+//  Created by Zack Wagner on 1/10/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct RunFreeView: View {
     
     @ObservedObject var managerClass: ManagerClass = ManagerClass()
     @State var phase = 0
-    @State var titles = ["Segmented Murph", "Mile 1","Calisthenics","Mile 2", "Murph Complete Congrats!"]
+    @State var titles = ["Run-Free Murph", "Pullups","Pushups","Squats", "Murph Complete Congrats!"]
     @State var times = [0.0, 0.0, 0.0, 0.0, 0.0]
     @State var calisthenicsString = ""
     @State var mile2String = ""
     @State var finalString = ""
-    @State var backgrounds = ["plain", "running", "cal", "running", "plain"]
+    @State var backgrounds = ["plain", "cal", "pushup", "squat", "plain"]
     @State var mile1String = ""
     
     var body: some View {
-        
-        
         ZStack{
             Image("plain").resizable().ignoresSafeArea()
             Image(backgrounds[phase]).resizable()
@@ -74,14 +72,14 @@ struct ContentView: View {
                                 times[phase] = managerClass.secondElapsed
                                 
                                 if phase == 1{
-                                    mile1String = "Mile 1 Split: " +
+                                    mile1String = "Pull-Up Split: " +
                                     ManagerClass.timeToString(mil: managerClass.secondElapsed)
                                 }
                                 else if phase == 2{
-                                    calisthenicsString = "Calisthenics Split: " + ManagerClass.timeToString(mil: times[phase] - times[0])
+                                    calisthenicsString = "Push-Up Split: " + ManagerClass.timeToString(mil: times[phase] - times[0])
                                 }
                                 else if phase == 3{
-                                    mile2String = "Mile 2 Split: " + ManagerClass.timeToString(mil: times[phase] - times[1])
+                                    mile2String = "Squat Split: " + ManagerClass.timeToString(mil: times[phase] - times[1])
                                     managerClass.finish()
                                     finalString = "Total Time: " + ManagerClass.timeToString(mil: managerClass.secondElapsed)
                                 }
@@ -161,11 +159,12 @@ struct ContentView: View {
                 
             }
         }
+
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RunFreeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RunFreeView()
     }
 }

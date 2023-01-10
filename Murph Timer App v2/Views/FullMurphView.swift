@@ -1,34 +1,33 @@
 //
-//  ContentView.swift
+//  FullMurphView.swift
 //  Murph Timer App v2
 //
-//  Created by Zack Wagner on 1/6/23.
+//  Created by Zack Wagner on 1/10/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct FullMurphView: View {
     
     @ObservedObject var managerClass: ManagerClass = ManagerClass()
     @State var phase = 0
-    @State var titles = ["Segmented Murph", "Mile 1","Calisthenics","Mile 2", "Murph Complete Congrats!"]
-    @State var times = [0.0, 0.0, 0.0, 0.0, 0.0]
-    @State var calisthenicsString = ""
+    @State var titles = ["Classic Murph", "Mile 1","Pull-Ups","Push-Ups","Squats", "Mile 2", "Murph Complete Congrats!"]
+    @State var times = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    @State var pullupString = ""
     @State var mile2String = ""
     @State var finalString = ""
-    @State var backgrounds = ["plain", "running", "cal", "running", "plain"]
+    @State var pushupString = ""
+    @State var squatString = ""
+    @State var backgrounds = ["plain", "running", "cal","pushup","squat", "running", "plain"]
     @State var mile1String = ""
     
     var body: some View {
-        
-        
         ZStack{
             Image("plain").resizable().ignoresSafeArea()
             Image(backgrounds[phase]).resizable()
             
             VStack{
                 
-                Spacer()
                 
                 Text(titles[phase]).font(.largeTitle).fontWeight(.bold).multilineTextAlignment(.center).padding()
                 
@@ -78,10 +77,16 @@ struct ContentView: View {
                                     ManagerClass.timeToString(mil: managerClass.secondElapsed)
                                 }
                                 else if phase == 2{
-                                    calisthenicsString = "Calisthenics Split: " + ManagerClass.timeToString(mil: times[phase] - times[0])
+                                    pullupString = "Pull-Up Split: " + ManagerClass.timeToString(mil: times[phase] - times[0])
                                 }
                                 else if phase == 3{
-                                    mile2String = "Mile 2 Split: " + ManagerClass.timeToString(mil: times[phase] - times[1])
+                                    pushupString = "Push-Up Split: " + ManagerClass.timeToString(mil: times[phase] - times[1])
+                                }
+                                else if phase == 4{
+                                    squatString = "Squat Split: " + ManagerClass.timeToString(mil: times[phase] - times[2])
+                                }
+                                else if phase == 5{
+                                    mile2String = "Mile 2 Split: " + ManagerClass.timeToString(mil: times[phase] - times[3])
                                     managerClass.finish()
                                     finalString = "Total Time: " + ManagerClass.timeToString(mil: managerClass.secondElapsed)
                                 }
@@ -119,8 +124,10 @@ struct ContentView: View {
                                 phase = 0
                                 mile1String = ""
                                 mile2String = ""
-                                calisthenicsString = ""
+                                pullupString = ""
                                 finalString = ""
+                                pushupString = ""
+                                squatString = ""
                             } label: {
                                 Image("RESET").resizable().frame(width: 100.0, height: 100.0).scaledToFill().cornerRadius(100)
                             }
@@ -133,8 +140,10 @@ struct ContentView: View {
                             phase = 0
                             mile1String = ""
                             mile2String = ""
-                            calisthenicsString = ""
+                            pullupString = ""
                             finalString = ""
+                            pushupString = ""
+                            squatString = ""
                         } label: {
                             Image("START OVER")
                                 .cornerRadius(10)
@@ -151,21 +160,23 @@ struct ContentView: View {
                     .font(.title2)
                     .multilineTextAlignment(.center)
                     .frame(height: 45.0)
-                Text(calisthenicsString).font(.title2).frame(height: 40.0)
+                Text(pullupString).font(.title2).frame(height: 40.0)
+                Text(pushupString).font(.title2).frame(height: 40.0)
+                Text(squatString).font(.title2).frame(height: 40.0)
                 Text(mile2String).font(.title2).frame(height: 40.0)
                 Text(finalString).font(.title).fontWeight(.bold).frame(height: 60.0)
                 
-                Spacer()
-                Spacer()
+                
                 
                 
             }
         }
+
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FullMurphView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FullMurphView()
     }
 }

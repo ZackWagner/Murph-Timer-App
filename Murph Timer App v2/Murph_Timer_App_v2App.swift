@@ -11,7 +11,7 @@ import SwiftUI
 struct Murph_Timer_App_v2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
