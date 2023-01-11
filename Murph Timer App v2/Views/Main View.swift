@@ -11,31 +11,50 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        NavigationView{
-            List{
-                NavigationLink {
-                    RunFreeView()
-                } label: {
-                    Text("Run-Free Murph")
-                }
-                NavigationLink {
-                    ContentView()
-                } label: {
-                    Text("Segmented Murph")
-                }
-                NavigationLink {
-                    FullMurphView()
-                } label: {
-                    Text("Classic Murph")
-                }
-                NavigationLink {
-                    MotivationTabView()
-                } label: {
-                    Text("Preparation")
-                }
-
-            }.navigationTitle("Choose Your Murph")
+        ZStack{
             
+            
+            
+            NavigationView{
+                List{
+                    NavigationLink {
+                        RunFreeView()
+                    } label: {
+                        Text("Run-Free Murph")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.listRowBackground(Image("darkplain"))
+                    NavigationLink {
+                        ContentView()
+                    } label: {
+                        Text("Segmented Murph")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.listRowBackground(Image("darkplain"))
+                    NavigationLink {
+                        FullMurphView()
+                    } label: {
+                        Text("Classic Murph")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.listRowBackground(Image("darkplain"))
+                    NavigationLink {
+                        MotivationTabView()
+                    } label: {
+                        Text("Preparation")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.listRowBackground(Image("darkplain"))
+                    
+                }
+                .padding(.top, 5.0)
+                .navigationTitle("Choose Your Murph").background{
+                    Image("plain")
+                }
+                    .scrollContentBackground(.hidden)
+                    .scrollDisabled(true)
+                
+            }
         }
     }
     
