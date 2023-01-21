@@ -32,7 +32,7 @@ struct MotivationTabView: View {
                     Text("3) Do you have space for calisthenics?")
                     Text("4) Is your pull-up bar set up?")
                     Text("5) Are your shoes tied?")
-                    Text("5) Are you excited?")
+                    Text("6) Are you excited?")
                 }
                 .padding(/*@START_MENU_TOKEN@*/.vertical, 6.0/*@END_MENU_TOKEN@*/)
                 

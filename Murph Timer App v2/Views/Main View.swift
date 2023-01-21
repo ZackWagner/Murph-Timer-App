@@ -11,7 +11,7 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        ZStack{
+        VStack{
             
             
             
@@ -49,12 +49,13 @@ struct MainView: View {
                 }
                 .padding(.top, 5.0)
                 .navigationTitle("Choose Your Murph").background{
-                    Image("plain")
+                    Image("mainback")
                 }
                     .scrollContentBackground(.hidden)
                     .scrollDisabled(true)
                 
             }
+            
         }
     }
     
